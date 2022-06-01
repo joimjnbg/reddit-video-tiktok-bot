@@ -12,28 +12,42 @@ def get_start_and_end_times(video_length, length_of_clip):
     random_time = randrange(180, int(length_of_clip) - int(video_length))
     return random_time, random_time + video_length
 
-def download_background():
-    if not Path("assets/mp4/background.mp4").is_file():
+
+def download_background(videoID):
+    """Downloads the background video from youtube.
+
+    Shoutout to: bbswitzer (https://www.youtube.com/watch?v=n_Dv4JMiwK8)
+    """
+    if not videoID:
         print_step(
-            "We need to download the Minecraft background video. This is fairly large but it's only done once. 😎"
+            "Shoutout to bbswitzer for his Minecraft parkour "
+        )
+        videoID = "n_Dv4JMiwK8"
+    url = "https://www.youtube.com/watch?v={}".format(videoID)
+
+    if not Path("assets/mp4/{}.mp4".format(videoID)).is_file():
+        print_step(
+            "We need to download the background video. This is fairly large but it's only done once. 😎"
         )
         print_substep("Downloading the background video... please be patient 🙏")
-        YouTube("https://www.youtube.com/watch?v=n_Dv4JMiwK8", on_progress_callback=on_progress).streams.filter(
+        YouTube(url, on_progress_callback=on_progress).streams.filter(
             res="720p"
         ).first().download(
             "assets/mp4",
-            filename="background.mp4",
+            filename="{}.mp4".format(videoID),
         )
         print_substep("Background video downloaded successfully! 🎉", style="bold green")
 
 
-def chop_background_video(video_length):
+def chop_background_video(video_length, videoID):
     print_step("Finding a spot in the background video to chop...✂️")
-    background = VideoFileClip("assets/mp4/background.mp4")
+    if not videoID:
+        videoID = "n_Dv4JMiwK8"
+    background = VideoFileClip("assets/mp4/{}.mp4".format(videoID))
 
     start_time, end_time = get_start_and_end_times(video_length, background.duration)
     ffmpeg_extract_subclip(
-        "assets/mp4/background.mp4",
+        "assets/mp4/{}.mp4".format(videoID),
         start_time,
         end_time,
         targetname="assets/mp4/clip.mp4",
