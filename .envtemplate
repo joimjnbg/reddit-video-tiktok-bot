@@ -5,7 +5,7 @@ REDDIT_CLIENT_ID=
 REDDIT_CLIENT_SECRET=
 REDDIT_USERNAME=
 REDDIT_PASSWORD=
-SUBREDDIT=AskReddit
+SUBREDDIT=askreddit
 ASK_EACH_TIME=False
 
 # English accents available are: Australia, UK, US, Canada, India, Ireland, & South Africa
