@@ -1,5 +1,5 @@
-#IMPORTANT: This file will push to GitHub with its default name. 
-# Make sure to change the file name to .env before pushing so it will be ignored by Git.
+#IMPORTANT: This file will push to GitHub with its default name - INCLUDING all of your environment variables.
+# Make sure to change this file's name to .env before pushing so it will be ignored by Git.
 
 REDDIT_CLIENT_ID=
 REDDIT_CLIENT_SECRET=
