@@ -1,4 +1,6 @@
 assets/
 .env
 .acc
+video_creation/__pycache__/
+utils/__pycache__/
 reddit-bot-351418-5560ebc49cac.json
