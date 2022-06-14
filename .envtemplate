@@ -1,0 +1,16 @@
+#IMPORTANT: This file will push to GitHub with its default name. 
+# Make sure to change the file name to .env before pushing so it will be ignored by Git.
+
+REDDIT_CLIENT_ID=
+REDDIT_CLIENT_SECRET=
+REDDIT_USERNAME=
+REDDIT_PASSWORD=
+SUBREDDIT=AskReddit
+ASK_EACH_TIME=False
+
+# English accents available are: Australia, UK, US, Canada, India, Ireland, & South Africa
+# The corresponding language codes are as follows:
+# Australia: com.au | UK: co.uk | US: com | Canada: ca | India: co.in | Ireland: ie | South Africa: co.za
+
+CHANGE_ACCENT=True
+LANGUAGE_ACCENT_CODE=co.uk
