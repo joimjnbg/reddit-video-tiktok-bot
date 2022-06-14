@@ -13,9 +13,10 @@ def save_text_to_mp3(reddit_obj):
     # Create a folder for the mp3 files.
     Path("assets/mp3").mkdir(parents=True, exist_ok=True)
 
-    if os.getenv("Change Accent") == "TRUE":
+    if os.getenv("Change_Accent") == "TRUE":
         try:
             tts = gTTS(text=reddit_obj["thread_title"], lang="en", slow=False, tld=os.getenv("LANGUAGE_ACCENT_CODE"))
+            print_substep("Changing accent to: " + os.getenv("LANGUAGE_ACCENT_CODE"))
         except ValueError:
             tts = gTTS(text=reddit_obj["thread_title"], lang="en", slow=False, tld="com.au")
             print_substep("The language accent code is not valid. Using Australia.")
