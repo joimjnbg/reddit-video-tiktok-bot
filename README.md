@@ -18,5 +18,5 @@
 - [❌] Finish Dockerfile (not working rn)
 - [❌] Allowing users to choose a background that is picked instead of the Minecraft one.
 - [✅] Allowing users to choose between any subreddit.
-- [❌] Allowing users to change voice.
+- [✅] Allowing users to change voice.
 - [✅] Download background progress bar
