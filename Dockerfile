@@ -6,3 +6,5 @@ RUN pip install -r requirements.txt
 RUN playwright install \
 	playwright install-deps
 CMD [ "python", "./main.py"]
+
+COPY . .
